@@ -1,54 +1,39 @@
-# React + TypeScript + Vite
+# ⚡ SourBlitz – React Native Playground on the Web
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![GitHub Pages](https://img.shields.io/badge/Live-Demo-green?style=for-the-badge&logo=github)](https://sourabhbhatt.github.io/sourBlitz/)
 
-Currently, two official plugins are available:
+SourBlitz is a creative developer portfolio & playground built in **React + Vite**, designed to showcase real-world, animation-driven UI components used in **React Native development**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+It includes beautifully crafted demos like OTP input eyes, pull-to-refresh animations, object rain loops, and even a full-fledged Fruit Ninja game (coming soon).
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## 🧠 Features
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+- ✨ Animated Scroll Header using Framer Motion
+- 👀 OTP Eye Tracker Input
+- 🌀 Custom Pull-to-Refresh Animation
+- 🌧️ Skia-based falling objects loop
+- 🎮 Fruit Ninja Game (Coming Soon)
+- 📝 Articles & Blogs with live previews
+- 🎨 Responsive and theme-ready (light/dark mode)
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+---
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 🚀 Live Demo
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+👉 [**Visit the Site**](https://sourabhbhatt.github.io/sourBlitz/)
+
+---
+
+## ⚙️ Tech Stack
+
+- **React + Vite + TypeScript**
+- **TailwindCSS**
+- **Framer Motion**
+- **React Router DOM**
+- **React Icons**
+- **gh-pages** for deployment
+
+---
+
