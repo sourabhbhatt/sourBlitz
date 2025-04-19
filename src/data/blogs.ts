@@ -1,3 +1,10 @@
+import curvedNavigation from "../assets/curvedNavigation.png";
+import curvedNavigationGif from "../assets/curvedNavigation.gif";
+import otpTracker from "../assets/otpTracker.png";
+import otpTrackerGif from "../assets/otpTracker.gif";
+import pullToRefresh from "../assets/pullToRefresh.png";
+import pullToRefreshGif from "../assets/pullToRefreshGif.gif";
+
 import demoGif from "../assets/demo.gif";
 import demo1Gif from "../assets/demo1.gif";
 // import eyeGif from "../assets/otp-eye.gif";
@@ -10,40 +17,334 @@ const blogData = [
     id: 1,
     title: "Bringing Life to Navigation – One Curve at a Time",
     disabled: false,
-    thumbnail:
-      "data:image/jpeg;base64,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",
-    image:
-      "https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExem1qM3ZjN3VhZjRxemI3NGV0M3VqdTNncWt1b2RwNmpuYW54Njl6MyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3vQXZiBGhxBEALEk/giphy.gif",
+    thumbnail: curvedNavigation,
+    image: curvedNavigationGif,
     overview: `🌀 Custom Bottom Navigation Bar in React Native using Tab Stack, Reanimated 3 & SVGs
 ▶️ 5 tabs – each with a satisfying pop-up animation
 🌟 A floating center tab for that elevated action
 ⚡ A dynamic animated highlighter that glides across tabs in a curved path`,
     components: [
       {
-        name: "Header",
+        name: "BottomTabNavigator.tsx",
         description: "Handles the navigation and dynamic scroll-based styling.",
-        code: `import { useEffect, useState } from 'react'
-import { motion, useScroll } from 'framer-motion'
+        code: `const BottomTabNavigator = () => {
+  return (
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        // header: () => <Header />,
+      }}
+      tabBar={props => <MyTabBar {...props} />}>
+      <Tab.Screen name="Home" component={HomeStackNavigator} />
+      <Tab.Screen name="Referrals" component={ReferralsStackNavigator} />
+      <Tab.Screen name="MyGames" component={MyGamesStackNavigator} />
+      <Tab.Screen name="Wallet" component={WalletStackNavigator} />
+      <Tab.Screen name="Account" component={DrawerNavigator} />
+    </Tab.Navigator>
+  );
+};`,
+      },
+      {
+        name: "MyTabBar.tsx",
+        description: "custom Tab bar handler",
+        code: `import React, {memo} from 'react';
+import {BottomTabBarProps} from '@react-navigation/bottom-tabs';
+import {Text, TouchableOpacity, StyleSheet, Platform} from 'react-native';
+import Animated, {useAnimatedStyle, withSpring} from 'react-native-reanimated';
 
-const Header = () => {
-  const { scrollY } = useScroll()
-  const [scrolled, setScrolled] = useState(false)
+import TabBarBg from './TabBarBg';
+import {CustomTheme} from '../../theme';
+import {getIconSource} from './navigationHelper';
+import {useAppTheme} from '../../hooks/useAppTheme';
 
-  useEffect(() => {
-    return scrollY.onChange((y) => setScrolled(y > 10))
-  }, [scrollY])
+const MyTabBar: React.FC<BottomTabBarProps> = memo(({state, descriptors, navigation}) => {
+  const {colors, dark} = useAppTheme();
+  const styles = dynamicStyles(colors);
 
   return (
-    <motion.header animate={{
-      backgroundColor: scrolled ? 'rgba(255,255,255,0.85)' : 'white',
-      padding: scrolled ? '0.5rem' : '1rem'
-    }} className="fixed top-0 left-0 right-0 z-50 px-6 flex justify-between items-center">
-      <h1 className="text-xl font-bold text-indigo-600">SourBlitz</h1>
-    </motion.header>
-  )
+    <TabBarBg
+      currentIndex={state.index}
+      color="#D9D9D9"
+      strokeColor={colors.NAVIGATION_CONTAINER_BORDER}
+      svgStyle={{backgroundColor: colors.NAVIGATION_CONTAINER_BG}}
+      totalTabs={5}>
+      {state.routes.map((route, index) => {
+        const {options} = descriptors[route.key];
+        const label =
+          options.tabBarLabel !== undefined
+            ? (options.tabBarLabel as string)
+            : options.title !== undefined
+            ? options.title
+            : route.name;
+
+        const isFocused = state.index === index;
+        const iconSource = getIconSource(route.name, isFocused, dark);
+
+        const onPress = () => {
+          const event = navigation.emit({
+            type: 'tabPress',
+            target: route.key,
+            canPreventDefault: true,
+          });
+
+          if (!isFocused && !event.defaultPrevented) {
+            navigation.navigate(route.name);
+          }
+        };
+
+        const onLongPress = () => {
+          navigation.emit({
+            type: 'tabLongPress',
+            target: route.key,
+          });
+        };
+        const animatedStyle = useAnimatedStyle(() => ({
+          transform: [{scale: withSpring(isFocused ? (route.name === 'MyGames' ? 1.1 : 1.3) : 1)}],
+        }));
+
+        return (
+          <TouchableOpacity
+            key={route.key}
+            onPress={onPress}
+            activeOpacity={0.6}
+            onLongPress={onLongPress}
+            hitSlop={{top: 10, bottom: 10, left: 10, right: 10}}
+            accessibilityState={isFocused ? {selected: true} : {}}
+            testID={options.tabBarButtonTestID || tab-route.name}
+            accessibilityLabel={options.tabBarAccessibilityLabel || route.name}
+            style={route.name === 'MyGames' ? styles.floatingButtonContainer : styles.tabItem}>
+            <Animated.Image
+              source={iconSource}
+              style={[route.name === 'MyGames' ? styles.floatingIcon : styles.icon, animatedStyle]}
+            />
+            <Text
+              style={[
+                route.name === 'MyGames' ? styles.centerLabel : styles.label,
+                {color: isFocused ? colors.NAVIGATION_ACTIVE : colors.NAVIGATION_INACTIVE},
+              ]}>
+              {route.name === 'MyGames' ? 'My Games' : label}
+            </Text>
+          </TouchableOpacity>
+        );
+      })}
+    </TabBarBg>
+  );
+});
+
+export default MyTabBar;
+
+const dynamicStyles = (colors: CustomTheme['colors']) =>
+  StyleSheet.create({
+    highlighter: {
+      position: 'absolute',
+      top: 0,
+      height: 4,
+      backgroundColor: colors.PRIMARY,
+      borderRadius: 1,
+      transform: [{rotateX: '50deg'}],
+    },
+
+    tabItem: {
+      flex: 1,
+      alignItems: 'center',
+      justifyContent: 'center',
+      paddingVertical: 8,
+    },
+    floatingButtonContainer: {
+      flex: 1,
+      width: 60,
+      height: 60,
+      bottom: 25,
+      alignItems: 'center',
+      ...Platform.select({
+        ios: {
+          shadowColor: '#000',
+          shadowOffset: {width: 0, height: 3},
+          shadowOpacity: 0.3,
+          shadowRadius: 4,
+        },
+        android: {elevation: 8},
+      }),
+    },
+    floatingIcon: {
+      ...StyleSheet.absoluteFillObject,
+      transform: [{rotate: '-1deg'}],
+    },
+    icon: {
+      width: 23,
+      height: 20,
+      resizeMode: 'contain',
+    },
+    label: {
+      fontSize: 12,
+      marginTop: 4,
+    },
+    centerLabel: {
+      position: 'absolute',
+      bottom: -16,
+      fontSize: 12,
+      marginTop: 4,
+    },
+  });
+`,
+      },
+      {
+        name: "TabBarBg.tsx",
+        description: "",
+        code: `import Svg, {Path} from 'react-native-svg';
+import React, {FC, useEffect, useMemo} from 'react';
+import {View, StyleSheet, ViewStyle} from 'react-native';
+import Animated, {
+  withSpring,
+  useSharedValue,
+  useDerivedValue,
+  useAnimatedStyle,
+  withTiming,
+} from 'react-native-reanimated';
+
+import {CustomTheme} from '../../theme';
+import {width} from '../../utils/helper';
+import {useAppTheme} from '../../hooks/useAppTheme';
+
+interface TabBarProps {
+  color?: string;
+  children: React.ReactNode;
+  currentIndex: number;
+  totalTabs?: number;
+  strokeColor?: string;
+  svgStyle?: ViewStyle;
 }
 
-export default Header;`,
+const TabBarBg: FC<TabBarProps> = ({
+  color,
+  children,
+  currentIndex,
+  totalTabs = 5,
+  strokeColor,
+  svgStyle,
+}) => {
+  const tabWidth = width / totalTabs;
+  const translateX = useSharedValue(0);
+  const translateY = useSharedValue(0);
+
+  const {colors} = useAppTheme();
+  const styles = useMemo(() => dynamicStyles(colors, tabWidth), [colors, tabWidth]);
+  const highlighterOpacity = useSharedValue(1);
+
+  /*  Bezier curve function matching the SVG path */
+  const calculateY = (x: number) => {
+    'worklet';
+    const controlY = 3; // Max dip depth in the middle
+    const t = x / width; // Normalize x position from 0 to 1
+    return (1 - t) * (1 - t) * 0 + 2 * (1 - t) * t * controlY + t * t * 0;
+  };
+
+  useEffect(() => {
+    const newX = tabWidth * currentIndex;
+    translateX.value = withSpring(newX, {damping: 15, stiffness: 120});
+    translateY.value = withSpring(calculateY(newX), {damping: 15, stiffness: 120});
+    highlighterOpacity.value = withTiming(currentIndex === 2 ? 0 : 1, {duration: 300});
+  }, [currentIndex, tabWidth, translateX, translateY, highlighterOpacity]);
+
+  const rotationAngle = useDerivedValue(() =>
+    withSpring(
+      {
+        0: 2,
+        1: 1.2,
+        2: 0,
+        3: -1.2,
+        4: -2,
+      }[currentIndex] || 0,
+      {damping: 10, stiffness: 100},
+    ),
+  );
+
+  const highlighterStyle = useAnimatedStyle(() => {
+    return {
+      transform: [
+        {translateX: translateX.value},
+        {translateY: translateY.value},
+        {rotate: 'rotationAngle.value deg'},
+      ],
+      opacity: highlighterOpacity.value,
+    };
+  });
+
+  return (
+    <View style={styles.container}>
+      <Svg width={'100%'} height={81} viewBox={'0 0 width 88'} style={[styles.svg, svgStyle]}>
+        <Path
+          d={'M 0 0 Q width * 0.5 15 width 0 L width 0 L 0 0 Z'}
+          fill={color}
+          stroke={strokeColor}
+          strokeWidth={1}
+        />
+      </Svg>
+      {/* Highlighter */}
+
+      <Animated.View style={[styles.slider, highlighterStyle]}>
+        <View style={[styles.notch, {borderTopColor: colors.PRIMARY}]} />
+      </Animated.View>
+
+      <View style={styles.tabContent}>{children}</View>
+    </View>
+  );
+};
+
+export default TabBarBg;
+
+const dynamicStyles = (colors: CustomTheme['colors'], tabWidth: number) =>
+  StyleSheet.create({
+    container: {
+      bottom: 0,
+      height: 81,
+      width: '100%',
+      position: 'absolute',
+      alignItems: 'center',
+      justifyContent: 'flex-end',
+      backgroundColor: '#D9D9D9',
+    },
+    svg: {
+      bottom: 0,
+      width: '100%',
+      position: 'absolute',
+    },
+    slider: {
+      width: tabWidth,
+      ...StyleSheet.absoluteFillObject,
+      backgroundColor: colors.PRIMARY,
+      height: 6,
+      alignItems: 'center',
+      borderTopEndRadius: 320,
+      borderBottomEndRadius: 320,
+    },
+    notch: {
+      width: 15,
+      height: 10,
+      borderTopWidth: 6,
+      borderTopColor: 'transparent',
+      borderLeftWidth: 10,
+      borderRightWidth: 10,
+      borderLeftColor: 'transparent',
+      borderRightColor: 'transparent',
+      position: 'absolute',
+      bottom: -9,
+      left: '50%',
+      transform: [{translateX: -8}],
+    },
+
+    tabContent: {
+      bottom: 0,
+      height: 75,
+      width: '100%',
+      paddingBottom: 10,
+      alignItems: 'center',
+      position: 'absolute',
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+    },
+  });
+`,
       },
     ],
   },
@@ -52,9 +353,8 @@ export default Header;`,
     id: 2,
     title: "👁️ OTP Input Tracker – Animated Eyes Following You",
     disabled: false,
-    thumbnail:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXG9m14ADhHlvXW4tnfH86LJPz7VOBOQL-1w&s",
-    image: demo1Gif,
+    thumbnail: otpTracker,
+    image: otpTrackerGif,
     overview: `A fun and engaging OTP input screen where cartoon eyes follow the user's input.
 🎯 Built with SVGs + Reanimated 3
 👀 Eyes animate with focus and blink on blur
@@ -64,7 +364,297 @@ export default Header;`,
         name: "OTPInputEyes.tsx",
         description:
           "Eye animation follows the current OTP field being focused.",
-        code: `// You'd include logic with shared values, input focus handlers, and SVG transformations using Reanimated 3`,
+        code: `import React, {useCallback, useEffect, useRef, useState} from 'react';
+import {
+  View,
+  TextInput,
+  StyleSheet,
+  KeyboardAvoidingView,
+  Platform,
+  TextInput as RNTextInput,
+} from 'react-native';
+import {useSharedValue, withTiming, Easing} from 'react-native-reanimated';
+import Face from './Face';
+
+const OtpEyesScreen = () => {
+  const otpLength = 4;
+  const inputs = useRef<RNTextInput[]>([]);
+  const [_, forceUpdate] = useState(false); // Force re-render for manual input updates
+
+  const eyeX = useSharedValue(20);
+  const eyeY = useSharedValue(20);
+  const mouthState = useSharedValue(0);
+
+  const values = useRef<string[]>(Array(otpLength).fill(''));
+
+  useEffect(() => {
+    inputs.current[0]?.focus();
+  }, []);
+
+  const getPupilPosition = useCallback(
+    (index: number) => {
+      const minX = 16;
+      const maxX = 24;
+      const stepX = (maxX - minX) / (otpLength - 1);
+      const x = minX + index * stepX;
+
+      const center = (otpLength - 1) / 2;
+      const distance = Math.abs(index - center);
+      const y = 24 + (1 - distance / center) * 2;
+
+      return {x, y};
+    },
+    [otpLength],
+  );
+
+  const updateEye = (index: number) => {
+    const pos = getPupilPosition(index);
+    eyeX.value = withTiming(pos.x);
+    eyeY.value = withTiming(pos.y);
+  };
+
+  const handleFocus = (index: number) => {
+    updateEye(index);
+  };
+
+  const handleChange = (text: string, index: number) => {
+    // Replace or clear value
+    values.current[index] = text;
+
+    if (text && index < otpLength - 1) {
+      inputs.current[index + 1]?.focus();
+    }
+
+    if (!text && index > 0) {
+      // On delete, move back
+      inputs.current[index - 1]?.focus();
+    }
+
+    forceUpdate(x => !x); // Trigger re-render to show cleared value
+
+    const code = values.current.join('');
+    if (code.length === otpLength && !code.includes('')) {
+      const isValid = code === '1234';
+
+      mouthState.value = withTiming(isValid ? 1 : -1, {
+        duration: 400,
+        easing: Easing.out(Easing.exp),
+      });
+
+      setTimeout(() => {
+        mouthState.value = withTiming(0);
+      }, 1000);
+
+      // Optionally: trigger OTP submission
+      if (isValid) {
+        console.log('✅ OTP verified:', code);
+      } else {
+        console.log('❌ Invalid OTP');
+      }
+    }
+  };
+
+  return (
+    <KeyboardAvoidingView
+      behavior={Platform.select({ios: 'padding', android: undefined})}
+      style={styles.container}>
+      <Face
+        eyeX={eyeX}
+        eyeY={eyeY}
+        mouthState={mouthState}
+        faceWidth={110}
+        faceHeight={90}
+      />
+
+      <View style={styles.otpContainer}>
+        {Array.from({length: otpLength}).map((_, i) => (
+          <TextInput
+            key={i}
+            ref={ref => (inputs.current[i] = ref!)}
+            style={styles.input}
+            keyboardType="number-pad"
+            maxLength={1}
+            value={values.current[i]} // ✅ bind value
+            onFocus={() => handleFocus(i)}
+            onChangeText={text => handleChange(text, i)}
+            placeholder="-"
+            placeholderTextColor="#aaa"
+            // caretHidden={true}
+          />
+        ))}
+      </View>
+    </KeyboardAvoidingView>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    paddingTop: 100,
+    alignItems: 'center',
+  },
+  otpContainer: {
+    flexDirection: 'row',
+    gap: 12,
+    marginTop: 20,
+    alignItems: 'center',
+  },
+  input: {
+    width: 44,
+    height: 56,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    backgroundColor: '#fff',
+    borderRadius: 8,
+    fontSize: 22,
+    textAlign: 'center',
+    textAlignVertical: 'center',
+    color: '#000',
+    alignItems: 'center',
+  },
+});
+
+export default OtpEyesScreen;
+`,
+      },
+      {
+        name: "Face.tsx",
+        description:
+          "Eye animation follows the current OTP field being focused.",
+        code: `import React from 'react';
+import {View, StyleSheet} from 'react-native';
+import Svg, {Circle, Path} from 'react-native-svg';
+import Animated, {
+  SharedValue,
+  useAnimatedStyle,
+  useAnimatedProps,
+  useDerivedValue,
+} from 'react-native-reanimated';
+
+const AnimatedCircle = Animated.createAnimatedComponent(Circle);
+const AnimatedPath = Animated.createAnimatedComponent(Path);
+
+type FaceProps = {
+  eyeX: SharedValue<number>;
+  eyeY: SharedValue<number>;
+  mouthState: SharedValue<number>;
+  faceWidth?: number;
+  faceHeight?: number;
+};
+
+const Eye: React.FC<{x: SharedValue<number>; y: SharedValue<number>}> = ({
+  x,
+  y,
+}) => (
+  <Svg height="40" width="40">
+    <Circle
+      cx="20"
+      cy="20"
+      r="15"
+      stroke="black"
+      strokeWidth="2"
+      fill="white"
+    />
+    <AnimatedCircle cx={x} cy={y} r="6" fill="black" />
+  </Svg>
+);
+
+const Eyebrow: React.FC<{isLeft: boolean}> = ({isLeft}) => (
+  <Svg height="10" width="40">
+    <Path
+      d={isLeft ? 'M10 10 Q 20 0 30 10' : 'M10 10 Q 20 0 30 10'}
+      stroke="white"
+      strokeWidth="2"
+      fill="none"
+    />
+  </Svg>
+);
+
+const Face: React.FC<FaceProps> = ({
+  eyeX,
+  eyeY,
+  mouthState,
+  faceWidth = 110,
+  faceHeight = 90,
+}) => {
+  const mouthWidth = faceWidth * 0.9;
+  const mouthHeight = faceHeight * 0.3;
+
+  const animatedEyeStyle = useAnimatedStyle(() => ({
+    transform: [{translateX: eyeX.value - 20}, {translateY: eyeY.value - 20}],
+  }));
+
+  const mouthPath = useDerivedValue(() => {
+    const controlY = 25 + mouthState.value * 10;
+    console.log('controlY', controlY);
+    return M5 25 Q 25 controlY 45 25;
+  });
+
+  const animatedMouthProps = useAnimatedProps(() => ({
+    d: mouthPath.value,
+  }));
+
+  return (
+    <View style={[styles.faceBox, {width: faceWidth, height: faceHeight}]}>
+      <View style={styles.eyesRow}>
+        <View style={styles.eyeColumn}>
+          <Eyebrow isLeft />
+          <Animated.View style={animatedEyeStyle}>
+            <Eye x={eyeX} y={eyeY} />
+          </Animated.View>
+        </View>
+        <View style={styles.eyeColumn}>
+          <Eyebrow isLeft={false} />
+          <Animated.View style={animatedEyeStyle}>
+            <Eye x={eyeX} y={eyeY} />
+          </Animated.View>
+        </View>
+      </View>
+
+      <View style={styles.mouthWrapper}>
+        <Svg width={mouthWidth} height={mouthHeight} viewBox="0 0 50 50">
+          <AnimatedPath
+            animatedProps={animatedMouthProps}
+            stroke="white"
+            strokeWidth="2"
+            fill="none"
+            strokeLinecap="round"
+          />
+        </Svg>
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  faceBox: {
+    backgroundColor: '#000',
+    borderRadius: 10,
+    marginBottom: 30,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    paddingVertical: 8,
+  },
+  eyesRow: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+    paddingHorizontal: 10,
+  },
+  eyeColumn: {
+    alignItems: 'center',
+  },
+  mouthWrapper: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    flex: 1,
+  },
+});
+
+export default Face;
+`,
       },
     ],
   },
@@ -72,15 +662,227 @@ export default Header;`,
   {
     id: 3,
     title: "🌊 Custom Pull-to-Refresh with Animated Feedback",
-    disabled: true,
-    thumbnail:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSH7imbVNs0BrGcxF8nkAynnPzkmtCskoPfFg&s",
-    image: demoGif,
+    disabled: false,
+    thumbnail: pullToRefresh,
+    image: pullToRefreshGif,
     overview: `Ditch the boring spinner — here's how you can animate your own refresh behavior.
 🔄 Built with Reanimated 3 and SVGs
 🌀 Ripple effect, smiley face, or rocket blast-off animations
 ✅ Enhances user delight and brand personality`,
-    components: [],
+    components: [
+      {
+        name: "pullToRefresh.tsx",
+        description: "Custom Animation",
+        code: `import { useRef, useState } from "react";
+import { PanResponder, StyleSheet, View } from "react-native";
+import Animated, {
+  useAnimatedScrollHandler,
+  useSharedValue,
+  useAnimatedStyle,
+  withTiming,
+  withDelay,
+} from "react-native-reanimated";
+
+import data from "../assets/data.json";
+import Card from "../components/Card";
+import ASSETS from "../assets/AssetManager";
+import refreshIcon from "../assets/images/refresh-icon.png";
+import colors from "../utils/colors";
+import Header from "../components/Header";
+
+const MAX_PULL_DISTANCE = 150; // Maximum pull distance for refresh
+const REFRESH_THRESHOLD = MAX_PULL_DISTANCE / 2; // Threshold to trigger refresh
+const REFRESH_ANIMATION_DURATION = 180; // Duration for animations
+const REFRESH_ICON_SIZE = 36; // Refresh icon dimensions
+
+const PullToRefreshAnimation = () => {
+  // Shared values for animation
+  const scrollPosition = useSharedValue(0);
+  const pullDownPosition = useSharedValue(0);
+  const isReadyToRefresh = useSharedValue(false);
+
+  const [refreshing, setRefreshing] = useState(false);
+
+  // Function to simulate refreshing data
+  const onRefresh = (done = () => {}) => {
+    setRefreshing(true);
+    setTimeout(() => {
+      setRefreshing(false);
+      done();
+    }, 2000); // Simulated refresh duration
+  };
+
+  // Handles release of the pull-down gesture
+  const onPanRelease = () => {
+    // Animate pull-down position back to original state
+    pullDownPosition.value = withTiming(
+      isReadyToRefresh.value ? REFRESH_ICON_SIZE * 2 : 0,
+      { duration: REFRESH_ANIMATION_DURATION }
+    );
+
+    if (isReadyToRefresh.value) {
+      isReadyToRefresh.value = false;
+
+      const onRefreshComplete = () => {
+        pullDownPosition.value = withTiming(0, {
+          duration: REFRESH_ANIMATION_DURATION,
+        });
+      };
+
+      onRefresh(onRefreshComplete);
+    }
+  };
+
+  // Gesture recognizer for handling pull-down interactions
+  const panResponderRef = useRef(
+    PanResponder.create({
+      onMoveShouldSetPanResponder: (event, gestureState) =>
+        scrollPosition.value <= 0 && gestureState.dy > 0,
+      onPanResponderMove: (event, gestureState) => {
+        // Update pull-down position within allowed range
+        pullDownPosition.value = Math.min(
+          MAX_PULL_DISTANCE,
+          Math.max(0, gestureState.dy)
+        );
+
+        // Update refresh readiness state
+        isReadyToRefresh.value = pullDownPosition.value >= REFRESH_THRESHOLD;
+      },
+      onPanResponderRelease: onPanRelease,
+      onPanResponderTerminate: onPanRelease,
+    })
+  );
+
+  // Track scroll position
+  const scrollHandler = useAnimatedScrollHandler({
+    onScroll: (event) => {
+      scrollPosition.value = event.contentOffset.y;
+    },
+  });
+
+  // Animated styles for pull-down effect
+  const pullDownStyles = useAnimatedStyle(() => ({
+    transform: [{ translateY: pullDownPosition.value }],
+  }));
+
+  // Animated styles for refresh container height
+  const refreshContainerStyles = useAnimatedStyle(() => ({
+    height: pullDownPosition.value,
+  }));
+
+  // Animated styles for refresh icon
+  const refreshIconStyles = useAnimatedStyle(() => {
+    const scale = Math.min(1, pullDownPosition.value / REFRESH_ICON_SIZE);
+    return {
+      opacity: refreshing
+        ? withDelay(100, withTiming(0, { duration: 20 }))
+        : Math.max(0, pullDownPosition.value - 25) / 50,
+      transform: [
+        { scaleX: refreshing ? withTiming(0.15, { duration: 120 }) : scale },
+        { scaleY: scale },
+        { rotate: {pullDownPosition.value * 3}deg },
+      ],
+      backgroundColor: refreshing ? "#fff" : "transparent",
+    };
+  });
+
+  return (
+    <>
+      <Header title={"Pull to refresh demo"} />
+      <View
+        pointerEvents={refreshing ? "none" : "auto"}
+        style={styles.container}
+      >
+        {/* Pull-down refresh container */}
+        <Animated.View
+          style={[styles.refreshContainer, refreshContainerStyles]}
+        >
+          {refreshing ? (
+            <LottieView
+              source={ASSETS.animatedLogo}
+              autoPlay
+              loop
+              style={styles.logo}
+            />
+          ) : (
+            <Animated.Image
+              source={refreshIcon}
+              style={[styles.refreshIcon, refreshIconStyles]}
+            />
+          )}
+        </Animated.View>
+
+        {/* Main content area with pull-down effect */}
+        <Animated.View
+          style={[styles.contentWrapper, pullDownStyles]}
+          {...panResponderRef.current.panHandlers}
+        >
+          <Animated.FlatList
+            data={data}
+            keyExtractor={(item) => item.id}
+            overScrollMode="never"
+            showsVerticalScrollIndicator={false}
+            ItemSeparatorComponent={() => <View style={styles.itemSeparator} />}
+            contentContainerStyle={styles.flatListContent}
+            renderItem={({ item, index }) => (
+              <Card
+                loading={refreshing}
+                index={index}
+                image={item.image}
+                title={item.title}
+                likes={item.likes}
+              />
+            )}
+            onScroll={scrollHandler}
+            scrollEventThrottle={16}
+          />
+        </Animated.View>
+      </View>
+    </>
+  );
+};
+
+export default PullToRefreshAnimation;
+
+// Stylesheet
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: colors.pulltoRef,
+  },
+  refreshContainer: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    width: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  logo: {
+    width: 280,
+    height: "100%",
+  },
+  refreshIcon: {
+    position: "absolute",
+    width: REFRESH_ICON_SIZE,
+    height: REFRESH_ICON_SIZE,
+    borderRadius: REFRESH_ICON_SIZE / 2,
+  },
+  contentWrapper: {
+    flex: 1,
+    backgroundColor: colors.pulltoRef,
+  },
+  itemSeparator: {
+    height: 20,
+  },
+  flatListContent: {
+    paddingHorizontal: 10,
+    paddingVertical: 30,
+  },
+});
+`,
+      },
+    ],
   },
 
   {

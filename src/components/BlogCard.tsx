@@ -37,8 +37,10 @@ const BlogCard = memo(
 
         <div className="p-5 flex flex-col justify-start min-h-[160px]">
           <h2
-            className={`text-lg font-semibold mb-2 transition ${
-              disabled ? "text-gray-500" : "text-gray-900 group-hover:text-yellow-400"
+            className={`text-lg font-semibold mb-2 transition line-clamp-2 ${
+              disabled
+                ? "text-gray-500"
+                : "text-gray-900 group-hover:text-yellow-400"
             }`}
           >
             {blog.title}
