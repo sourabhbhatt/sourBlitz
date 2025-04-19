@@ -5,8 +5,8 @@ import otpTrackerGif from "../assets/otpTracker.gif";
 import pullToRefresh from "../assets/pullToRefresh.png";
 import pullToRefreshGif from "../assets/pullToRefreshGif.gif";
 
-import demoGif from "../assets/demo.gif";
 import demo1Gif from "../assets/demo1.gif";
+// import demoGif from "../assets/demo.gif";
 // import eyeGif from "../assets/otp-eye.gif";
 // import pullGif from "../assets/pull-refresh.gif";
 // import dropGif from "../assets/object-drop.gif";
